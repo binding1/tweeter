@@ -15,10 +15,19 @@ html {
  */
 
 body {
+
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 5%;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
