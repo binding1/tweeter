@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
   padding-top: 2em;
+  width: 80%;
 }
 
 .compose {
@@ -23,7 +23,7 @@ textarea {
   resize: none;
 }
 
-div {
+.intext-tweet {
   font-family: 'Bungee', cursive;
 }
 
