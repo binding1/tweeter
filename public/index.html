@@ -25,7 +25,7 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- New Tweet CSS -->
+    <!-- Tweet Feed CSS -->
     <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
 
     <!-- External JS -->
@@ -66,7 +66,7 @@
     <main class="container"> 
       <section class="new-tweet">
         <h2 class="compose">Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form class="tweet-submit" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="intext-tweet">
@@ -77,7 +77,7 @@
       </section>
 
       <section class="existing-tweets">
-        <article class="tweet">
+        <!-- <article class="tweet">
           <header class="tweet-header">
             <div class="tweet-user-profile"><img src="https://i.imgur.com/73hZDYK.png"><span class="profile-text">Newton</span></div>
             <div class="profile-tag">@SirIsaac</div>
@@ -92,7 +92,7 @@
             </div>
           </footer>
         </article>
-        <!-- <article class="tweet">
+        <article class="tweet">
           <header class="tweet-header">
             <span class="tweet-user-profile"><img src="https://i.imgur.com/73hZDYK.png"><span>Newton</span></span>
             <span>@SirIsaac</span>
