@@ -69,12 +69,22 @@ const loadTweets = () => {
 };
 
 $(document).ready(function() {
-  loadTweets(data);
+  loadTweets();
   $('.tweet-submit').on('submit', function(event) {
     event.preventDefault();
-    console.log('Tweet added');
-    const serializeData = $(this).serialize();
+    const tweetLength = $(this).children("#tweet-text");
 
+    if (!tweetLength.val()) {
+      alert("Please enter a tweet.");
+      return false;
+    }
+
+    if (tweetLength.val().length > 140) {
+      alert("Tweet is over 140 characters.");
+      return false;
+    }
+    
+    const serializeData = $(this).serialize();
     $.ajax('/tweets', {
       method: 'POST',
       data: serializeData
