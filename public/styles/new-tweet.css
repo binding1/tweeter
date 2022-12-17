@@ -10,6 +10,12 @@
   display: none;
 }
 
+#tweet-error {
+  color: red;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
 label {
   font-weight: bold;
 }

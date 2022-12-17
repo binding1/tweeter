@@ -57,6 +57,10 @@ const formReset = () => {
   $('#tweet-text').val("");
 }
 
+const formErrorMsg = (errorMsg) => {
+  $('#tweet-error').html(errorMsg).slideDown(700);
+}
+
 $(document).ready(function() {
   loadTweets();
   $('.tweet-submit').on('submit', function(event) {
@@ -64,15 +68,17 @@ $(document).ready(function() {
     const tweetLength = $(this).children("#tweet-text");
 
     if (!tweetLength.val()) {
-      alert("Please enter a tweet.");
+      formErrorMsg('<i class="fa-solid fa-triangle-exclamation"></i> Please enter a tweet.')
       return false;
     }
 
     if (tweetLength.val().length > 140) {
-      alert("Tweet is over 140 characters.");
+      formErrorMsg('<i class="fa-solid fa-triangle-exclamation"></i> Tweet is over the 140 character limit.')
       return false;
     }
     
+    $('#tweet-error').slideUp(700);
+
     const serializeData = $(this).serialize();
     $.ajax('/tweets', {
       method: 'POST',
