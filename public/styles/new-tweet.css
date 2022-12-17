@@ -41,6 +41,12 @@ button:hover {
   box-shadow: 5px 5px lightsteelblue;
 }
 
+button:active {
+  box-shadow: 3px 3px lightsteelblue;
+  transform: translateY(3px)
+
+}
+
 .counter {
   display: flex;
   justify-content: right;

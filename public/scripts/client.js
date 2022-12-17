@@ -7,7 +7,7 @@
 const renderTweets = (tweetData) => {
   for (let i of tweetData) {
     let $tweet = createTweetElement(i);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
 
@@ -43,6 +43,14 @@ const loadTweets = () => {
   })
 };
 
+const counterReset = () => {
+  $('.counter').text(140);
+}
+
+const formReset = () => {
+  $('#tweet-text').val("");
+}
+
 $(document).ready(function() {
   loadTweets();
   $('.tweet-submit').on('submit', function(event) {
@@ -64,5 +72,9 @@ $(document).ready(function() {
       method: 'POST',
       data: serializeData
     })
+
+    counterReset();
+    formReset();
+    loadTweets();
   })
 });
