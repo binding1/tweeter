@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const esc = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = (tweetData) => {
   for (let i of tweetData) {
     let $tweet = createTweetElement(i);
@@ -19,7 +25,7 @@ const createTweetElement = (tweetData) => {
         <div class="tweet-user-profile"><img src=${tweetData["user"].avatars}<span class="profile-text">${tweetData["user"].name}</span></div>
         <div class="profile-tag">${tweetData["user"].handle}</div>
       </header>
-      <p>${tweetData["content"].text}</p>
+      <p>${esc(tweetData["content"].text)}</p>
       <footer class="tweet-footer">
         <span>${tweetDaysAgo}</span>
         <div class="icons">
