@@ -37,6 +37,10 @@ button {
   padding-inline: 0.5em;
 }
 
+button:hover {
+  box-shadow: 5px 5px;
+}
+
 .counter {
   display: flex;
   justify-content: right;
