@@ -1,15 +1,13 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
+//filter HTML forms to prevent injections
 const esc = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+
+//function to prepend new tweets
 const renderTweets = (tweetData) => {
   for (let i of tweetData) {
     let $tweet = createTweetElement(i);
@@ -17,6 +15,8 @@ const renderTweets = (tweetData) => {
   }
 };
 
+
+//function to format and create new tweets then add to index.html
 const createTweetElement = (tweetData) => {
   const tweetDaysAgo = timeago.format(tweetData["created_at"], "en_US");
   const $tweet = `<article class="tweet">
@@ -41,6 +41,8 @@ const createTweetElement = (tweetData) => {
   return $tweet;
 };
 
+
+//load existing tweets, GET request in ajax
 const loadTweets = () => {
   $.ajax({
     url: "/tweets",
@@ -50,18 +52,26 @@ const loadTweets = () => {
   });
 };
 
+
+//character counter reset function
 const counterReset = () => {
   $(".counter").text(140);
 };
 
+
+//form empties after submit
 const formReset = () => {
   $("#tweet-text").val("");
 };
 
+
+//error message function
 const formErrorMsg = (errorMsg) => {
   $("#tweet-error").html(errorMsg).slideDown(700);
 };
 
+
+//jquery new tweet handler
 $(document).ready(function() {
   loadTweets();
   $(".tweet-submit").on("submit", function(event) {
@@ -81,9 +91,10 @@ $(document).ready(function() {
       );
       return false;
     }
-
+S
+    //animation for error message
     $("#tweet-error").slideUp(700);
-
+    
     const serializeData = $(this).serialize();
     $.ajax("/tweets", {
       method: "POST",

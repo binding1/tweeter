@@ -10,6 +10,7 @@ $(document).ready(function() {
       .parent()
       .children(".intext-tweet")
       .children(".counter");
+    
     //update counter value
     counter.text(remainChar);
 
