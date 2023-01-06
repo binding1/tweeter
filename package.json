@@ -5,10 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
-    "lint": "npx eslint .",
-    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    "start": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
+
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
@@ -21,6 +20,6 @@
     "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.19.4"
   }
 }
