@@ -1,15 +1,17 @@
 nav {
   position: fixed;
   top: 0;
-  font-size: xx-large;
+  font-size: x-large;
   font-family: 'Bungee', cursive;
   height: 120px;
   width: 100%;
   color: #FFFFFF;
-  background-color: #4056A1;
-  padding: 1.5em;
+  padding-block: 1.5em;
+  padding-inline: 1em;
   display: flex;
   justify-content: space-between;
+  background-color: #b87b00;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 .new-tweet-nav {
@@ -21,5 +23,34 @@ nav {
 }
 
 .fa-angles-down {
-  color: red
+  color: red;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-origin: top;
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-2 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+    font-size: xx-large;
+    padding: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+    font-size: xx-large;
+    padding: 1.5em;
+  }
 }

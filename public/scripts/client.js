@@ -22,7 +22,10 @@ const createTweetElement = (tweetData) => {
   const $tweet = (
     `<article class="tweet">
       <header class="tweet-header">
-        <div class="tweet-user-profile"><img src=${tweetData["user"].avatars}<span class="profile-text">${tweetData["user"].name}</span></div>
+        <div class="tweet-user-profile">
+          <img src=${tweetData["user"].avatars}>
+          <span class="profile-text">${tweetData["user"].name}</span>
+        </div>
         <div class="profile-tag">${tweetData["user"].handle}</div>
       </header>
       <p>${esc(tweetData["content"].text)}</p>
@@ -34,7 +37,8 @@ const createTweetElement = (tweetData) => {
           <i class="fa-solid fa-heart"></i>
         </div>
       </footer>
-    </article>`
+    </article>
+    </br>`
   );
   return $tweet;
 };

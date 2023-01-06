@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 2em;
-  width: 80%;
+  padding-top: 1em;
+  width: 95%;
 }
 
 .compose {
@@ -27,6 +27,12 @@ textarea {
   border: none;
   border-bottom: groove 5px ;
   resize: none;
+  font-size: large;
+  font-family: Source Sans Pro;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .intext-tweet {
@@ -56,4 +62,19 @@ button:active {
 .counter {
   display: flex;
   justify-content: right;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .new-tweet {
+    display: flex;
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    display: flex;
+    padding-top: 0px;
+  }
 }

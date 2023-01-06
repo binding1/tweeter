@@ -15,11 +15,11 @@ html {
  */
 
 body {
-
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0px;
 }
 
 main {
@@ -35,6 +35,40 @@ nav {
   font-family: 'Bungee', cursive;
   font-size: 24px;
 }
+
+@media only screen and (min-width: 768px) {
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 66.7%;
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 66.7%;
+  }
+}
+
 
 
 /*

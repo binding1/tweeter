@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Disable viewport zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudßflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- External Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -55,35 +58,35 @@
     </nav>
 
     <!-- Header -->
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
+    <div class="content-container">
+      <header>
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
+  
+      <!-- Page-specific (main) content here -->
+      <main class="container content-container"> 
+        <section class="new-tweet">
+          <h2 class="compose">Compose Tweet</h2>
+          <div hidden id="tweet-error"></div>
+          <form class="tweet-submit" method="POST" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="intext-tweet">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+  
+        <section class="existing-tweets" id="tweets-container">
+          <!-- will auto-populate via client.js -->
+        </section>
       </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container"> 
-      <section class="new-tweet">
-        <h2 class="compose">Compose Tweet</h2>
-        <div hidden id="tweet-error"></div>
-        <form class="tweet-submit" method="POST" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="intext-tweet">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <section class="existing-tweets" id="tweets-container">
-        <!-- will auto-populate via client.js -->
-      </section>
-
     </main>
   </body>
 </html>
