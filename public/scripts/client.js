@@ -5,22 +5,21 @@
  */
 
 const esc = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
 };
 
 const renderTweets = (tweetData) => {
-  for (let i of tweetData) {
-    let $tweet = createTweetElement(i);
-    $('#tweets-container').prepend($tweet);
-  }
+    for (let i of tweetData) {
+        let $tweet = createTweetElement(i);
+        $("#tweets-container").prepend($tweet);
+    }
 };
 
 const createTweetElement = (tweetData) => {
-  const tweetDaysAgo = timeago.format(tweetData["created_at"], 'en_US');
-  const $tweet = (
-    `<article class="tweet">
+    const tweetDaysAgo = timeago.format(tweetData["created_at"], "en_US");
+    const $tweet = `<article class="tweet">
       <header class="tweet-header">
         <div class="tweet-user-profile">
           <img src=${tweetData["user"].avatars}>
@@ -38,59 +37,61 @@ const createTweetElement = (tweetData) => {
         </div>
       </footer>
     </article>
-    </br>`
-  );
-  return $tweet;
+    </br>`;
+    return $tweet;
 };
 
 const loadTweets = () => {
-  $.ajax({
-    url:"/tweets",
-    method: 'GET'
-  })
-  .then((tweetData) => {
-    renderTweets(tweetData);
-  })
+    $.ajax({
+        url: "/tweets",
+        method: "GET",
+    }).then((tweetData) => {
+        renderTweets(tweetData);
+    });
 };
 
 const counterReset = () => {
-  $('.counter').text(140);
-}
+    $(".counter").text(140);
+};
 
 const formReset = () => {
-  $('#tweet-text').val("");
-}
+    $("#tweet-text").val("");
+};
 
 const formErrorMsg = (errorMsg) => {
-  $('#tweet-error').html(errorMsg).slideDown(700);
-}
+    $("#tweet-error").html(errorMsg).slideDown(700);
+};
 
-$(document).ready(function() {
-  loadTweets();
-  $('.tweet-submit').on('submit', function(event) {
-    event.preventDefault();
-    const tweetLength = $(this).children("#tweet-text");
-
-    if (!tweetLength.val()) {
-      formErrorMsg('<i class="fa-solid fa-triangle-exclamation"></i> Please enter a tweet.')
-      return false;
-    }
-
-    if (tweetLength.val().length > 140) {
-      formErrorMsg('<i class="fa-solid fa-triangle-exclamation"></i> Tweet is over the 140 character limit.')
-      return false;
-    }
-    
-    $('#tweet-error').slideUp(700);
-
-    const serializeData = $(this).serialize();
-    $.ajax('/tweets', {
-      method: 'POST',
-      data: serializeData
-    })
-
-    counterReset();
-    formReset();
+$(document).ready(function () {
     loadTweets();
-  })
+    $(".tweet-submit").on("submit", function (event) {
+        event.preventDefault();
+        const tweetLength = $(this).children("#tweet-text");
+
+        if (!tweetLength.val()) {
+            formErrorMsg(
+                '<i class="fa-solid fa-triangle-exclamation"></i> Please enter a tweet.'
+            );
+            return false;
+        }
+
+        if (tweetLength.val().length > 140) {
+            formErrorMsg(
+                '<i class="fa-solid fa-triangle-exclamation"></i> Tweet is over the 140 character limit.'
+            );
+            return false;
+        }
+
+        $("#tweet-error").slideUp(700);
+
+        const serializeData = $(this).serialize();
+        $.ajax("/tweets", {
+            method: "POST",
+            data: serializeData,
+        });
+
+        counterReset();
+        formReset();
+        loadTweets();
+    });
 });
