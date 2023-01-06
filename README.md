@@ -23,6 +23,6 @@ This repository contains forked code from Lighthouse Lab, which was then built u
 
 ## Screenshots
 
-!["Screenshot of Mobile Screen"](https://github.com/binding1/tweeter/blob/master/photos/MobileScreen.png?raw=true)
+!["Screenshot of Mobile Screen"](https://github.com/binding1/tweeter/blob/master/photos/MobileScreen.png)
 
-!["Screenshot of Desktop Screen"](https://github.com/binding1/tweeter/blob/master/photos/DesktopScreen.png?raw=true)
+!["Screenshot of Desktop Screen"](https://github.com/binding1/tweeter/blob/master/photos/DesktopScreen.png)
