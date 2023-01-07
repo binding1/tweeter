@@ -96,7 +96,7 @@ $(document).ready(function () {
         }).then(() => {
             counterReset();
             formReset();
-            location.reload();
+            loadTweets();
         });
     });
 });
