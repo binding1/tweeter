@@ -1,6 +1,6 @@
 # Tweeter Project
 
-## Welcome to Tweeter, a simple, single-page Twitter clone.
+## Welcome to Tweeter. A simple, single-page Twitter clone.
 
 This repository contains forked code from Lighthouse Lab, which was then built upon using HTML, CSS, JS, jQuery and AJAX to display my front-end skills. Back-end skills include Node and Express.
 
